@@ -323,6 +323,7 @@
 
 		if(questionCounter === questions.length){
 			if(extraQuestionIndexes.length > 1){
+				console.log(scores[answerInput.value]);
 				scores[answerInput.value]++;
 				calculateScore();
 				nextQuestion();
@@ -385,10 +386,10 @@
 	    var str;
 	    for(var i=0; i < questions[index].choices.length ; i++){
 	        var item = document.createElement('li');
-	        var input = '<input type="radio" name="answer" value=' + i + ' />';
-	        input += questions[index].choices[i].answer;
+	        var label = '<label for=' + i + '>' + questions[index].choices[i].answer + '</label>'
+	        var input = '<input type="radio" name="answer" id=' + i +' value=' + i + ' />';
 	        
-	        item.innerHTML = input;
+	        item.innerHTML = input + label;
 	        radioList.appendChild(item);
 	    }
 	    
@@ -409,8 +410,14 @@
 				winners.push(x);
 			}
 		}
+
+		if(extraQuestionIndexes.length > 0){
+
+		}
+
 		if(winners.length > 1){
 
+			console.log(winners);
 			extraQuestionIndexes = winners;
 			renderExtraQuestion(winners);
 			return;
@@ -427,6 +434,7 @@
 	function renderExtraQuestion(options){
 	    //document.querySelector('#question').remove();
 
+		console.log('element created')
         var nextDiv = createExtraQuestionElement(options);
         document.querySelector('.quiz').appendChild(nextDiv);	
 	}
@@ -452,13 +460,16 @@
 	function createExtraRadios(options){
 	    var radioList = document.createElement('ul');
 	    var str;
+
 	    for(var i=0; i < options.length ; i++){
 	        var item = document.createElement('li');
-	        var input = '<input type="radio" name="answer" value=' + options[i] + ' />';
-	        input += extraQuestion.answers[options[i]].answer;
+	        var input = '<input type="radio" name="answer" id=' + i + ' value=' + i + ' />';
+	        var label = '<label for=' + i + '>' + extraQuestion.answers[options[i]].answer + '</label>'
+
 	        
-	        item.innerHTML = input;
+	        item.innerHTML = input + label;
 	        radioList.appendChild(item);
+
 	    }
 	    
 	    return radioList;
