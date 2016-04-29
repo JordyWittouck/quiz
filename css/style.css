@@ -6,12 +6,29 @@
   font-weight:bold;
 }
 
-html {
-	font-size: 62.5%;
+* {
+	margin: 0;
+	padding: 0;
 }
 
+html {
+	font-size: 62.5%;
+	font-family: 'Helvetica';}
+
 body {
-	/*background-color: #49AFA5;*/
+	
+}
+
+main {
+	/*width: 100%;*/
+	max-width: 689px;
+	height: 550px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #49AFA5;
+	background-image: url('../assets/background.jpg');
+	background-size: cover;
 }
 
 h1, .button {
@@ -21,35 +38,56 @@ h1, .button {
 	font-family: 'antonio';
 	text-align: center;
 	text-transform: uppercase;
-	box-shadow: 5px 5px 0 #888888;
-}
-
-h1 {
-	width: 200px;
+	box-shadow: 5px 5px 0 rgba(39, 40, 34, 0.5);
 }
 
 .wrapper {
-	width: 100%;
-	max-width: 689px;
-	background-color: #49AFA5;
+	padding: 20px 0;
 	display: flex;
 	align-items: center;
 	flex-direction: column;
 }
 
+h1 {
+	padding: 20px;
+}
+
 .button {
 	width: 100px;
+	transition: all 0.3s ease;
+	cursor: pointer;
+	font-size: 1.6em;
 }
 
 .button:hover {
-	position: relative;
-	top: 5px;
-	left: 5px;
+	margin: 5px -5px -5px 5px;
 	box-shadow: none;
 }
 
-ul li {
+li {
 	list-style: none;
+	background-color: white;
+	margin: 20px;
+	padding: 10px;
+	box-shadow: 5px 5px 0 rgba(39, 40, 34, 0.5);
+	cursor: pointer;
+	width: auto;
+	font-size: 1.4em;
+	transition: transform 0.3s ease;
+
+}
+
+li:hover {
+	transform: rotate(1.5deg);
+}
+
+input:checked li{
+	background-color: black;
+	color: white;
+}
+
+label {
+	padding: 10px 0;
 }
 
 @media only screen and (max-width: 650px){
