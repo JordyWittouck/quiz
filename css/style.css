@@ -50,6 +50,7 @@ h1, .button {
 
 h1 {
 	padding: 20px;
+	margin-bottom: 10px;
 }
 
 .button {
@@ -64,13 +65,18 @@ h1 {
 	box-shadow: none;
 }
 
+ul {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
 li {
 	list-style: none;
 	margin: 20px;
-	padding: 10px;
-	cursor: pointer;
-	width: auto;
 	font-size: 1.6em;
+	transition: transform 0.3s ease;
 }
 
 li:hover {
@@ -81,19 +87,16 @@ input[type="radio"]{
     visibility:hidden;
 }
 
-input:checked label{
-	background-color: black;
+input[type="radio"]:checked + label{
+	background-color: RGBA(39, 40, 34, 1);
 	color: white;
 }
 
 label {
-	padding: 10px 0;
+	padding: 10px 15px;
 	background-color: white;
 	box-shadow: 5px 5px 0 rgba(39, 40, 34, 0.5);
 	cursor: pointer;
-	transition: transform 0.3s ease;
-	margin: 20px auto;
-	padding: 10px;
 	text-align: center;
 }
 
