@@ -1,0 +1,59 @@
+@font-face{
+  font-family: 'antonio';
+  src: url('fonts/antonio-bold-webfont.woff') format('woff');
+  src: url('fonts/antonio-bold-webfont.woff2') format('woff2');
+  font-style:normal;
+  font-weight:bold;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	/*background-color: #49AFA5;*/
+}
+
+h1, .button {
+	background-color: #CB403D;
+	padding: 15px 0;
+	color: white;
+	font-family: 'antonio';
+	text-align: center;
+	text-transform: uppercase;
+	box-shadow: 5px 5px 0 #888888;
+}
+
+h1 {
+	width: 200px;
+}
+
+.wrapper {
+	width: 100%;
+	max-width: 689px;
+	background-color: #49AFA5;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.button {
+	width: 100px;
+}
+
+.button:hover {
+	position: relative;
+	top: 5px;
+	left: 5px;
+	box-shadow: none;
+}
+
+ul li {
+	list-style: none;
+}
+
+@media only screen and (max-width: 650px){
+	.app{
+		display: none;
+	}
+}
